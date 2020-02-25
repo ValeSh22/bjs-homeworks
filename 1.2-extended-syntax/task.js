@@ -3,15 +3,13 @@ function getResult(a,b,c){
    let discriminant = Math.pow(b,2) - 4 * (a * c);
    let x = [];
 
-   if (discriminant < 0) {
-    console.log (x);
- }
-   else if (discriminant == 0) {
-    console.log (x([-b / 2 * a]));
+   if (discriminant == 0) {
+    let x = [-b / 2 * a];
  }
    else if (discriminant > 0) {
-    console.log (x([-b + Math.sqrt(discriminant) / 2 * a, -b - Math.sqrt(discriminant) / 2 * a]));
+    let x = [-b + Math.sqrt(discriminant) / 2 * a, -b - Math.sqrt(discriminant) / 2 * a];
 }
+    console.log (x);
     return x;
 }
 
@@ -20,9 +18,9 @@ function getAverageMark(marks){
     console.log (marks.length);
 
     if (marks.length >  5) {
-    console.log (marks.splice(1, 5));
+     marks.splice(5, 1)
+     console.log (marks);
   }
-    marks = [3, 4, 5, 5, 2]
     let result = marks.reduce(function(sum, current) {
     return sum + current;
   }, 0);
@@ -34,8 +32,10 @@ function getAverageMark(marks){
 
 function askDrink(name,dateOfBirthday){
     let today = new Date();
-    dateOfBirthday = today.getFullYear();
-    name = "Катя";
+    today = dateOfBirthday - today.getFullYear();
+    let name = "Катя";
+    let result;
+   
 
     if (dateOfBirthday >  18) {
     let result = `Не желаете ли олд-фэшн, ${name}?`;
